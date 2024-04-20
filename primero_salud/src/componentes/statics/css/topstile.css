@@ -1,0 +1,42 @@
+.barra_sup{
+  height: 90px;    
+}
+.navbar{
+  text-align: right;
+  
+}
+
+.search{
+  left: 500px;
+  width: 200px;
+  background-color: rgb(42, 42, 82);
+}
+
+.send{
+  left: 510px;
+  width: 50px;
+  height: 20px;
+  
+}
+
+.indices{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul{
+  display: flex; /* Hacemos flex al ul */
+  justify-content: center; /* centramos en el eje horizontal*/
+  justify-content: space-around; /* Aplicamos separación a los elementos dentro del ul */
+  line-height: 10px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden
+}
+
+.barras{
+  align-items: center;
+}
