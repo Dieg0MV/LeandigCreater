@@ -17,11 +17,15 @@ rutas.get('/api/login', (req, res) => {
  //Login
  rutas.post('/api/log', async (req, res) => {
     const {name, password} = req.body
+    if (name && password){
+        await pool.query("SELECT * FROM users WHERE name = ? AND password = ? ",[name, password], (res, err)=>{
 
-    const [rows] = await pool.query("SELECT * FROM users") 
-    res.send({rows})
+
+        }); 
+    }
  });
 
+ //para actualizaciones
  rutas.put('/api/login', (req, res) => {
     res.send('actualizando mundo')
  });
