@@ -4,8 +4,10 @@ import { pool } from "../db.js";
 const rutas = Router()
 
 rutas.get('/data', async (req, res) => {
-    const [result] = await pool.query('SELECT 1 + 1 AS result')
-    res.json(result[0])
+    const {name,password} = req.body
+    const [result] = await pool.query("SELECT * FROM users WHERE name = ? AND password = ? ", [name, password])
+    res.json(result)
+
  })
 
 export default rutas;
