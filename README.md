@@ -1,8 +1,8 @@
 # Primero salud App
 
-- require 
+ ## require 
 
-* express
+* Express
 * MySQL
 * Node 
 * React
