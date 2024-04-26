@@ -5,6 +5,7 @@ import api from "./routers/api.routes.js";
 import log  from "./routers/log.routes.js";
 const app = express();
 
+//configuraciones de la session
 app.use(session({
 	secret: 'secret',
 	resave: true,
@@ -12,7 +13,7 @@ app.use(session({
 }));
 app.use(express.json())
 
-
+//rutas
 app.use(api)
 app.use(log)
 

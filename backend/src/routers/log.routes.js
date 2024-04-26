@@ -5,7 +5,7 @@ const rutas = Router();
 
 
  //Login
- rutas.post('/api/login', async (req, res) => {
+ export default rutas.post('/api/login', async (req, res) => {
   
    const {name, password} = req.body
    if(name && password){
@@ -19,6 +19,5 @@ const rutas = Router();
          res.send('Usuario y/o Contraseña Incorrecta');
       }		     
    }
-   })
-export default rutas;
+})
  
