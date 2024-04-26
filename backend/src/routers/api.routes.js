@@ -3,11 +3,11 @@ import { pool } from "../db.js";
         
 const rutas = Router()
 
-rutas.get('/data', async (req, res) => {
-    const {name,password} = req.body
-    const [result] = await pool.query("SELECT * FROM users WHERE name = ? AND password = ? ", [name, password])
-    res.json(result)
-
- })
+rutas.post('/api/singin', async (req, res) => {
+    const {name, password} = req.body;
+    const [rows] = await pool.query("INSERT INTO users (name, password) VALUES (?, ?)", [name, password]);
+    
+    res.send({rows});
+ });
 
 export default rutas;
