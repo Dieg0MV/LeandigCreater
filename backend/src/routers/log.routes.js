@@ -13,7 +13,9 @@ const rutas = Router();
       if (result.length > 0){
          req.session.loggedin = true; 
          req.session.name = name;
-         res.send("Logeado con exito")   
+         res.status(200)
+         console.log("Logeado con exito")   
+         
       }
       else {
          res.send('Usuario y/o Contraseña Incorrecta');

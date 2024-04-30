@@ -3,6 +3,7 @@ import session from "express-session";
 import morgan from 'morgan';
 import api from "./routers/api.routes.js";
 import log  from "./routers/log.routes.js";
+import forms from "./routers/forms.routes.js"
 const app = express();
 
 //configuraciones de la session
@@ -14,6 +15,7 @@ app.use(session({
 app.use(express.json())
 
 //rutas
+app.use(forms)
 app.use(api)
 app.use(log)
 
