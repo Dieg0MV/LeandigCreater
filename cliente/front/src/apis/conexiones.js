@@ -5,6 +5,6 @@ export const handleLogin = async (name, contraseña) => {
     headers:{
     'Content-Type':'application/json'
     },
-    body: JSON.stringify({ name,contraseña })
+    body: JSON.stringify({ name, contraseña })
     })
   };

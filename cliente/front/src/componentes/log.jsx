@@ -1,42 +1,34 @@
+import { useState } from "react";
 import { handleLogin } from "../apis/conexiones.js";
-import { useForm } from "react-hook-form";
+//import { useForm } from "react-hook-form";
 
-export default function Login(){
-  const {
-    register, 
-    handleSubmit, 
-    formState: {errors}} 
-    = useForm(
-        
 
-    )
-  const onSubmit= (data, e) => console.log(data, e)
-  const onError= (errors, e) => console.log(errors, e)
-  useForm({defaultValues:{
-    name:"",
-    password:""
-  }})
+export default function Log(){
   
+  const [name, setName] = useState('')
+  const [psw, setPsw] = useState('')
  
+  handleLogin(name, psw)
 
 return(
     <div>
         <h1>Login</h1>
-        <form onSubmit={handleSubmit(onSubmit, onError)} method="POST">
+        <form method="POST">
             <input 
-            {...register("name", {required:"Ingresa un usuario"})} 
-            type="text" 
-            placeholder="Usuario" 
+            value={name}
+            type="name" 
+            placeholder="Usuario"
+            onChange={(e) => setName(e.target.value)} 
             />
 
             <input 
             type="password"
-            {...register("password", {require:"ingresa tu contraseñ"})} 
-            placeholder="Contraseña" 
-            
+            placeholder="Contraseña"
+            value={psw}
+            onChange={(e) => setPsw(e.target.value)}
             required/>
 
-            <button> send</button>
+            <button>send</button>
         </form>        
     </div>
 )}
