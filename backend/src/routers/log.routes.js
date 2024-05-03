@@ -14,7 +14,7 @@ const rutas = Router();
          req.session.loggedin = true; 
          req.session.name = name;
          res.status(200)
-         console.log("Logeado con exito")   
+         res.send("ok") 
          
       }
       else {
