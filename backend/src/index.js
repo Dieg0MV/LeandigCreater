@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import api from "./routers/api.routes.js";
 import log  from "./routers/log.routes.js";
 import forms from "./routers/forms.routes.js"
-import  cors from "cors";
+import cors from "cors";
 const app = express();
 
 //configuraciones de la session
@@ -15,13 +15,12 @@ app.use(session({
 }));
 app.use(express.json())
 app.use(cors({
-	origin:'http://localhost:3000',
-	optionsSuccessStatus: 200
+	origin:'*',
 }
 ))
-app.use((err, res) => {
+app.use((err, res, req, next) => {
 	console.error(err.stack);
-	res.status(500).send('Algo salió mal!');
+	res.status(500).send('Algo salió mal!', err);
   });
   
 app.use(morgan('dev'))

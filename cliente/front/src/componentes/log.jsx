@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Home from "./home";
 //import { handleLogin } from "../apis/conexiones.js";
 //import { useForm } from "react-hook-form";
 
@@ -19,13 +20,14 @@ export default function Log(){
         body: JSON.stringify({name, password})
       }).then(response => {
         if (!response.ok) {
+          console.log(response)
           throw new Error('Inicio de sesión fallido');
         }
-        return response.json();
+        return <Home/>;
       })
       
-      
     } catch (err) {
+      
       console.log(err);
     }
   };
