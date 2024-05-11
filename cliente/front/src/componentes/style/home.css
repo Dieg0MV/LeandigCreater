@@ -1,0 +1,12 @@
+
+h1 { 
+  text-align: center;  
+}
+
+.bar{
+  background-color: rgb(50, 0, 231);
+  position: relative;
+  top: 100%;
+  color: rgb(0, 0, 0);
+  
+}
