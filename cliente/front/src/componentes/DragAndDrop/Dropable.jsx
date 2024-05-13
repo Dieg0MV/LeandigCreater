@@ -7,10 +7,10 @@ export default function (props) {
     id:props.id
   })
   const style = {
-    opacity: isOver ? 1 : 0.5
+    color: isOver ? "blue" : undefined ,
+    //opacity: isOver ? 1 : 0.5
   };
   return (
-
     <div ref={setNodeRef} style={style}>
       {props.children}
     </div>
