@@ -6,13 +6,18 @@ export default function Draggable(props){
 
   const {attributo, listeners, setNodeRef, transform} = useDraggable({
     id:props.id,
+    
   })
   const style = {
     transform: CSS.Translate.toString(transform),
   };
   return(
-    <button ref={setNodeRef} style={style} {...listeners} {...attributo}> 
+    <div ref={setNodeRef}>
+    <button style={style} {...listeners} {...attributo}> 
     {props.children}
+    go
     </button>
+    
+    </div>
   )
 }

@@ -1,10 +1,13 @@
 import { React } from "react";
 import { useDroppable } from "@dnd-kit/core";
 
-export default function (props) {
+export default function Droppable(props) {
   
   const {isOver, setNodeRef}= useDroppable({
-    id:props.id
+    id:props.id,
+    data: {
+      index:props.index,
+    }
   })
   const style = {
     color: isOver ? "blue" : undefined ,

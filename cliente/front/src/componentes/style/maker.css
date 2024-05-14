@@ -1,0 +1,10 @@
+.cont{
+  display: flex;
+  background-color: aliceblue;
+  text-align: center;
+}
+.drop{
+  text-align: center;
+  flex-direction: column;
+  background-color: rgb(121, 179, 135);
+}
