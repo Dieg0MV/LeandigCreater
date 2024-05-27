@@ -6,7 +6,6 @@ import  Droppable  from "./DragAndDrop/Dropable";
 
 export default function (){
   const [parent, setParent] = useState(null)
-  //const [txtstade, txtstade] = useState("")
   const dragable = (
     <Draggable id="dragable">
       
