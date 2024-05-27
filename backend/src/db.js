@@ -15,3 +15,11 @@ export const dbforms = createPool({
     password: 'P0k3m0m0s',
     database: 'formularios'
 });
+
+export const dbLandis = createPool({
+    host: 'localhost',
+    port: 3307,
+    user: 'root', 
+    password: 'P0k3m0m0s',
+    database: 'landis'
+});

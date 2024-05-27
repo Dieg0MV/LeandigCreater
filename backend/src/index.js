@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import api from "./routers/api.routes.js";
 import log  from "./routers/log.routes.js";
 import forms from "./routers/forms.routes.js"
+import maker from "./routers/maker.routes.js";
 import cors from "cors";
 const app = express();
 
@@ -26,6 +27,7 @@ app.use((err, res, req, next) => {
 app.use(morgan('dev'))
 
 //rutas
+app.use(maker)
 app.use(forms)
 app.use(api)
 app.use(log)
