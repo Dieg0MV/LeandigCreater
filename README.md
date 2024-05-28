@@ -2,11 +2,11 @@
 
  ## require 
 
-* npm i Express
+* NPM i Express
 * MySQL
-* npm i mysql2
+* NPM i mysql2
 * Nodejs 
-* npm i React
-* npm i React Stripe 
+* NPM i React
+* NPM i React Stripe 
  
  
