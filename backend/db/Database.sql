@@ -33,4 +33,4 @@ CREATE TABLE 'landis' (
   landig_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (landig_id), 
   name_landig VARCHAR(50), 
-  Landig_file BLOB) ENGINE = InnoDB;
+  page_landi BLOB) ENGINE = InnoDB;

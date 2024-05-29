@@ -1,39 +1,51 @@
 import "./style/maker.css"
 import { useState } from "react";
-import { DndContext } from "@dnd-kit/core";
-import  Draggable  from "./DragAndDrop/Dragable";
-import  Droppable  from "./DragAndDrop/Dropable";
 
 export default function (){
-  const [parent, setParent] = useState(null)
-  //const [txtstade, txtstade] = useState("")
-  const dragable = (
-    <Draggable id="dragable">
-      
-    </Draggable>
-  );
+  const [fileName, setLandis_name] = useState('')
+  const [ data, setPage ] = useState('')
+ 
+  const submit = async (e)=>{
+    e.preventDefault();
+    try{
+    await fetch('http://localhost:4000/api/maker',{
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify({fileName, data})
+  })
+  }catch(err){ console.log("error --> ", err)}
+}
+
+
   return(
     <div className="cont">
-    <div className="drop">
-    <DndContext onDragEnd={handlerDragEnd}>
+   <header className="top"> 
 
-      {!parent ? dragable :null}
-      <Droppable id="img">
-        {parent === "img" ? dragable: 'Drop here'}
-      </Droppable>
-      <Droppable id="text">
-      {parent === "text" ? dragable: 'Drop here'}
-      </Droppable>
-    </DndContext>
-    </div>
-    <div className="dragable">
+   </header>
+    
 
+    <div className="drag" >
+      
+      </div>
+
+
+      <div className="drop">
+
+        <div className="filexml">
+        <input type="file" id="file-selector" multiple></input>
+        
+
+        </div>
+      
+      </div>
+    
     </div>
-    </div>
+
+
   );
-  function handlerDragEnd({over}){
-    setParent(over ? over.id : null)    
-  }
+ 
 
 
 }

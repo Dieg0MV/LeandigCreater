@@ -6,6 +6,9 @@ export default function Draggable(props){
 
   const {attributo, listeners, setNodeRef, transform} = useDraggable({
     id:props.id,
+    data:{
+      supports:['']
+    }
     
   })
   const style = {
@@ -15,7 +18,7 @@ export default function Draggable(props){
     <div ref={setNodeRef}>
     <button style={style} {...listeners} {...attributo}> 
     {props.children}
-    go
+    texto submit
     </button>
     
     </div>
