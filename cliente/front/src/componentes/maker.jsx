@@ -2,6 +2,7 @@ import "./style/maker.css"
 import { useState } from "react";
 
 export default function (){
+<<<<<<< HEAD
   const [fileName, setLandis_name] = useState('')
   const [ data, setPage ] = useState('')
  
@@ -19,6 +20,14 @@ export default function (){
 }
 
 
+=======
+  const [parent, setParent] = useState(null)
+  const dragable = (
+    <Draggable id="dragable">
+      
+    </Draggable>
+  );
+>>>>>>> 05d3adc8a10209fcf6ff47c802577d74386b392a
   return(
     <div className="cont">
    <header className="top"> 
