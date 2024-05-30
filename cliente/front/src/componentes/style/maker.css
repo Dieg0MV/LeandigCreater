@@ -12,18 +12,10 @@
   margin:50px;
 }
 
-.drag{ 
+.conf{ 
   text-align: legth;
   flex-direction: column;
   background-color: rgb(194, 204, 196);
   height: 900px;
   width: 600px;
-}
-
-.drop{
-  background-color: rgb(99, 95, 95);
-  height: 900px;
-  width: 600px;
-  text-align: center;
-  
 }

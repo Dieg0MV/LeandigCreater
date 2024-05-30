@@ -1,8 +1,6 @@
 import "./style/home.css";
 import { Sidebar, Menu, SubMenu, MenuItem } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
-
-
 export default function Home() {
 
  return(

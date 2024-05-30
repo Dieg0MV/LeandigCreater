@@ -2,14 +2,14 @@ import "./style/maker.css"
 import { useState } from "react";
 
 export default function (){
-<<<<<<< HEAD
+  
   const [fileName, setLandis_name] = useState('')
   const [ data, setPage ] = useState('')
  
   const submit = async (e)=>{
     e.preventDefault();
     try{
-    await fetch('http://localhost:4000/api/maker',{
+    await fetch('http://localhost:4000/api/createlans',{
     method:'POST',
     headers:{
       'Content-Type':'application/json'
@@ -19,42 +19,25 @@ export default function (){
   }catch(err){ console.log("error --> ", err)}
 }
 
-
-=======
-  const [parent, setParent] = useState(null)
-  const dragable = (
-    <Draggable id="dragable">
-      
-    </Draggable>
-  );
->>>>>>> 05d3adc8a10209fcf6ff47c802577d74386b392a
   return(
-    <div className="cont">
-   <header className="top"> 
+  <div className="cont">
+    <header className="top"> 
 
-   </header>
-    
+    </header>
+    <div className="conf" >
+      <input 
+        type="text" 
+        value={fileName}
+        placeholder="Nombre la landig" 
+        onChange={(e)=> setLandis_name(e.target.value)} 
+      />
 
-    <div className="drag" >
-      
-      </div>
-
-
-      <div className="drop">
-
-        <div className="filexml">
-        <input type="file" id="file-selector" multiple></input>
-        
-
-        </div>
-      
-      </div>
-    
+      <input 
+        type="button"  
+        id="create"        
+      />
     </div>
-
+  </div>
 
   );
- 
-
-
 }

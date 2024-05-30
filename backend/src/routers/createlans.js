@@ -7,10 +7,8 @@ export default rutas.post ("/api/createlans",async (req, res) => {
     const {fileName, data} = req.body
     await writeFile(fileName, data);
     console.log("Wrote data to ",fileName);
-    res.sendFile(fileName) 
-
+    res.send(fileName)
   } catch (err) {
       console.log("Got an error trying to write the file: ", err);
-    }
-  
+    } 
 });

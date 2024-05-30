@@ -1,7 +1,5 @@
 import { useState } from "react";
 import Home from "./home";
-//import { handleLogin } from "../apis/conexiones.js";
-
 export default function Log(){
   const [name, setName] = useState('')
   const [password , setPassword ] = useState('')
@@ -27,7 +25,6 @@ export default function Log(){
     }
   };
       
-
 return(
     <div>
         <h1>Login</h1>
