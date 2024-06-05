@@ -16,3 +16,10 @@ h1 {
   background-color: rgb(245, 209, 7);
 
 }
+.savelans{
+ display: flex;
+ flex-direction: column;
+
+
+
+}
