@@ -21,12 +21,12 @@ app.use(cors({
 	methods: ['GET', 'POST']
 }));
 
-//manejo de errores 
+//manejo de errores
+
 app.use((err, res, req, next) => {
 	console.error(err.stack);
 	res.status(500).send('Algo salió mal!', err);
-}); 
-
+});
 app.use(morgan('dev'));
 
 //rutas

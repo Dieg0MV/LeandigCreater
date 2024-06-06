@@ -4,14 +4,12 @@ import { Sidebar, Menu, SubMenu, MenuItem } from "react-pro-sidebar";
 
 export default function Home() {
   
-  const [fileName, setFilename]= useState('')
-  const[data, setData]= useState('')
+  const [fileName, setFilename]= useState('');
+  const[data, setData]= useState('');
   const [anchorEl, setAnchorEl] = useState(null);
   const [showFields, setShowFields] = useState(false);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+ 
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -23,22 +21,23 @@ export default function Home() {
   };
 
   const make = async (e)=>{
-    e.preventDefault();
+    e.preventDefault()
       try {
-        await fetch('http://localhost:4000/api/createlans',{
+        const response = await fetch('http://localhost:4000/api/createlans',{
           method:'POST',
+          mode:'cors',
           headers:{
-            'Contet-Type':'application/json'
+           'Content-Type': 'application/json'
           },
-          body:JSON.stringify(fileName, data)
-        }.then((res)=>{ 
-          return(res)
-        }) 
-      )
+          body:JSON.stringify({fileName, data})
+        })
+        const result = await response.json();
+        console.log(result); 
+
       } catch (error) {
         console.log("error --> ",error)
       }
-  }
+  };
 
   return(
     <div className="content">
@@ -68,25 +67,21 @@ export default function Home() {
 
         {showFields && (
         <div className="savelans">
-        <form onSubmit={make} method="POST">
-        <input 
-          type="name"
-          placeholder="Nombre de la landi"
-          onChange={(e) => setFilename(e.target.value)}
-        />
-      <input 
-        type="text"
-        placeholder="Titulo de la landig"
-        onChange={(e) => setData(e.target.value)}
-        />
-      <button> Save </button>
-      </form>
-        </div>
-      )}
-    </div>
-
-
-
-
-    </div>
+          <form onSubmit={make} method="POST">
+          <input 
+            type="name"
+            placeholder="Nombre de la landi"
+            onChange={(e) => setFilename(e.target.value)}
+          />
+          <input 
+          type="text"
+          placeholder="Titulo de la landig"
+          onChange={(e) => setData(e.target.value)}
+          />
+          <button> Save </button>
+          </form>
+         </div>
+        )}
+      </div>
+     </div>
 )}
