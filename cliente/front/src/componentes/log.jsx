@@ -15,10 +15,10 @@ export default function Log(){
         body: JSON.stringify({name, password})
       }).then(response => {
         if (!response.ok) {
-          console.log(response)
+          return <Home/>
           throw new Error('Inicio de sesión fallido');
         }
-        return <Home/>;
+       
       })
     } catch (err) {
       console.log(err);
