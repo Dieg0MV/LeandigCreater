@@ -1,7 +1,8 @@
 # Primero salud App
 
- ## require 
+landigmaker es una app web hecha para crear landis page de manera sencilla arrastrando y soltando elementos.
 
+ ## require 
 * Nodejs 
 * MySQL
 * npm install Express
