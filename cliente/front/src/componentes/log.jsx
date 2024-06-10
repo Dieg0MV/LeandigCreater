@@ -17,8 +17,9 @@ export default function Log(){
         if (!response.ok) {
           console.log(response)
           throw new Error('Inicio de sesión fallido');
+          return <Home/>;
         }
-        return <Home/>;
+       
       })
     } catch (err) {
       console.log(err);

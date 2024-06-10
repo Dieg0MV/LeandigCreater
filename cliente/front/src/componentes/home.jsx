@@ -5,18 +5,17 @@ import { Sidebar, Menu, SubMenu, MenuItem } from "react-pro-sidebar";
 export default function Home() {
   
   const [fileName, setFilename]= useState('');
-  const[data, setData]= useState('');
+  const [data, setData]= useState('');
   const [anchorEl, setAnchorEl] = useState(null);
-  const [showFields, setShowFields] = useState(false);
-
- 
+  const [showcreat, setShowcreate] = useState(false);
+  //const [showFields, setShowFields] = useState(false);
 
   const handleClose = () => {
     setAnchorEl(null);
   };
 
   const handleMenuItemClick = () => {
-    setShowFields(true);
+    setShowcreate(true);
     handleClose();
   };
 
@@ -65,7 +64,7 @@ export default function Home() {
           </Menu>
         </Sidebar>
 
-        {showFields && (
+        {showcreat && (
         <div className="savelans">
           <form onSubmit={make} method="POST">
           <input 
