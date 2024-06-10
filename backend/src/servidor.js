@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config({path:'C:/Users/Diego/Desktop/RESPALDO DIEGO/Escritorio/xp/why_not/backend/src/.env'})
+
 import express from 'express';
 import session from "express-session";
 import morgan from 'morgan';
@@ -6,6 +9,8 @@ import forms from "./routers/forms.routes.js"
 import save from "./routers/save.routes.js";
 import lans from "./routers/createlans.js";
 import cors from "cors";
+
+
 const app = express();
 
 //configuraciones de la session
@@ -14,6 +19,7 @@ app.use(session({
 	resave: true,
 	saveUninitialized: true
 }));
+
 
 app.use(express.json());
 app.use(cors({

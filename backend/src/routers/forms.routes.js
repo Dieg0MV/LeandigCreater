@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {dbforms} from "../db.js";
+import {dbforms} from "../db/db.js";
 const rutas = Router();
 
 

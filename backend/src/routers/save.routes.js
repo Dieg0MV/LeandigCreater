@@ -1,5 +1,5 @@
 import Router from "express";
-import { dbLandis } from "../db.js";
+import { dbLandis } from "../db/db.js";
 const rutas = Router();
 
 export default rutas.post("api/maker", async(req, res) => {

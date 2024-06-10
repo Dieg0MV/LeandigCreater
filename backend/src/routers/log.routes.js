@@ -1,28 +1,41 @@
+
 import { Router } from "express";
-import session  from "express-session";
-import {pool} from "../db.js";
+import  jwt  from "jwt-simple";
+import  moment  from "moment";
+import {pool} from "../db/db.js";
+
 const rutas = Router();
 
 
  //Login
  export default rutas.post('/api/login', async (req, res) => {
-  
-   const {name, password} = req.body
-   if(name && password){
-   const [result] = await pool.query("SELECT * FROM users WHERE name = ? AND password = ? ",[name, password])
-      if (result.length > 0){
-         req.session.loggedin = true
-         req.session.name = name
-         res.status(200)
-         res.send(true)
-         res.redirect("http://localhost:3000/home")
+  const creatToken = (user)=>{
+    var payload ={
+      userID:user.id,
+      createdAt: moment().unix(),
+      expireAt: moment().add(1, 'day').unix()
+    }
+    return jwt.encode(payload, process.env.TOKEN_KEY)
+  }
 
-       } else {
-         res.status(401).send('Usuario y/o contraseña incorrectos');
-       }
-     } else {
-       res.status(400).send('Faltan credenciales');
-     }
-   
+
+  const {name, password} = req.body
+  if(name && password){
+  const [result] = await pool.query("SELECT * FROM users WHERE name = ? AND password = ? ",[name, password])
+    if (result.length > 0){
+        res.json({
+          succesfull:creatToken(result),
+          done:'logeado correctamente'
+        })
+      
+
+      }else {
+        res.status(401).send('Usuario y/o contraseña incorrectos');
+      }
+     }else {
+      res.status(400).send('Faltan credenciales'); 
+    }   
+
+    
 })
  
