@@ -1,6 +1,3 @@
-import dotenv from 'dotenv'
-dotenv.config({path:'C:/Users/Diego/Desktop/RESPALDO DIEGO/Escritorio/xp/why_not/backend/src/.env'})
-
 import express from 'express';
 import session from "express-session";
 import morgan from 'morgan';
@@ -9,7 +6,8 @@ import forms from "./routers/forms.routes.js"
 import save from "./routers/save.routes.js";
 import lans from "./routers/createlans.js";
 import cors from "cors";
-
+import dotenv from 'dotenv'
+dotenv.config({path:'C:/Users/Diego/Desktop/RESPALDO DIEGO/Escritorio/xp/why_not/backend/src/.env'})
 
 const app = express();
 
@@ -20,15 +18,13 @@ app.use(session({
 	saveUninitialized: true
 }));
 
-
 app.use(express.json());
 app.use(cors({
 	origin:'*',
 	methods: ['GET', 'POST']
 }));
 
-//manejo de errores
-
+//Manejo de errores
 app.use((err, res, req, next) => {
 	console.error(err.stack);
 	res.status(500).send('Algo salió mal!', err);

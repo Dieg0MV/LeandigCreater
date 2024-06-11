@@ -16,10 +16,8 @@ export default function Log(){
       }).then(response => {
         if (!response.ok) {
           return <Home/>
-          throw new Error('Inicio de sesión fallido');
-          return <Home/>;
-        }
-       
+          }  
+        throw new Error('Inicio de sesión fallido');
       })
     } catch (err) {
       console.log(err);
