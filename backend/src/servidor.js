@@ -7,7 +7,7 @@ import save from "./routers/save.routes.js";
 import lans from "./routers/createlans.js";
 import cors from "cors";
 import dotenv from 'dotenv'
-dotenv.config({path:'C:/Users/Diego/Desktop/RESPALDO DIEGO/Escritorio/xp/why_not/backend/src/.env'})
+dotenv.config({path:'C:/Users/Escritorio/xp/why_not/backend/src/.env'})
 
 const app = express();
 
